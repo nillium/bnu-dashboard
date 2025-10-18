@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 60px 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 800px;
+            width: 100%;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2d3748;
+            margin-bottom: 50px;
+            font-size: 2.5rem;
+            font-weight: 300;
+            letter-spacing: -1px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .box {
+            aspect-ratio: 1;
+            border: 0.5px solid rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            background: white;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-decoration: none;
+            color: #4a5568;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .box::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .box:hover::before {
+            opacity: 1;
+        }
+
+        .box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+            border-color: rgba(102, 126, 234, 0.3);
+        }
+
+        .box:active {
+            transform: translateY(-2px);
+        }
+
+        .icon {
+            font-size: 2.5rem;
+            margin-bottom: 12px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .label {
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            letter-spacing: 0.3px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 20px;
+            }
+
+            h1 {
+                font-size: 2rem;
+                margin-bottom: 30px;
+            }
+
+            .grid {
+                gap: 15px;
+            }
+
+            .icon {
+                font-size: 2rem;
+            }
+
+            .label {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Dashboard</h1>
+        <div class="grid">
+            <a href="#" class="box">
+                <div class="icon">📊</div>
+                <div class="label">Analytics</div>
+            </a>
+            <a href="#" class="box">
+                <div class="icon">⚙️</div>
+                <div class="label">Settings</div>
+            </a>
+            <a href="#" class="box">
+                <div class="icon">👤</div>
+                <div class="label">Profile</div>
+            </a>
+            <a href="#" class="box">
+                <div class="icon">📁</div>
+                <div class="label">Files</div>
+            </a>
+            <a href="#" class="box">
+                <div class="icon">🏠</div>
+                <div class="label">Home Assistant</div>
+            </a>
+            <a href="#" class="box">
+                <div class="icon">🔔</div>
+                <div class="label">Notifications</div>
+            </a>
+            <a href="#" class="box">
+                <div class="icon">📈</div>
+                <div class="label">Reports</div>
+            </a>
+            <a href="#" class="box">
+                <div class="icon">🤖</div>
+                <div class="label">Automation</div>
+            </a>
+            <a href="chat.html" class="box">
+                <div class="icon">💬</div>
+                <div class="label">AI Chat</div>
+            </a>
+        </div>
+    </div>
+</body>
+
+</html>
